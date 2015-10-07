@@ -1,4 +1,4 @@
-# PBS KIDS Game Template
+# PBS KIDS Template
 
 Template for the [SpringRoll Studio](https://github.com/SpringRoll/SpringRollStudio) application.
 
