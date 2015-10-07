@@ -1,0 +1,76 @@
+{
+	"name": "PBS KIDS Game",
+	"id": "org.pbskids.default",
+	"version": "1.0.0",
+	"extend": "io.springroll.default",
+	"github": "SpringRoll/PBSKIDSTemplate",
+	"required": [
+		"sound",
+		"captions",
+		"container-client"
+	],
+	"modules": [
+		{
+			"id": "learning",
+			"name": "Learning",
+			"description": "Integration for sending events with the Learning dispatcher",
+			"main": "components/springroll-pbskids/dist/modules/learning.min.js",
+			"mainDebug": [
+				"components/springroll-pbskids/dist/modules/learning.js",
+				"components/springroll-pbskids/dist/modules/learning.css"
+			],
+			"bower": {
+				"jquery": "*",
+				"springroll-pbskids": "https://projects.pbs.org/stash/scm/sd/springroll-pbskids.git"
+			},
+			"librariesDebug": [
+				"components/jquery/dist/jquery.js"
+			]
+		},
+		{
+			"id": "learning-media",
+			"name": "Learning Media",
+			"description": "Convenience functions for playing and dispatching events for feedback, movie playback, voice over.",
+			"main": "components/springroll-pbskids/dist/modules/learning-media.min.js",
+			"mainDebug": "components/springroll-pbskids/dist/modules/learning-media.js",
+			"depends": [
+				"captions",
+				"sound",
+				"learning",
+				["pixi-animation", "easeljs-animation"]
+			]
+		},
+		{
+			"id": "easeljs-learning",
+			"name": "EaselJS Learning",
+			"description": "EaselJS-specific convenience utilities for event tracking",
+			"main": "components/springroll-pbskids/dist/modules/easeljs-learning.min.js",
+			"mainDebug": "components/springroll-pbskids/dist/modules/easeljs-learning.js",
+			"depends": [
+				"easeljs-display",
+				"learning"
+			]
+		},
+		{
+			"id": "google-analytics",
+			"name": "Google Analytics",
+			"description": "Implement Google Analytic events",
+			"main": "components/springroll-pbskids/dist/modules/google-analytics.min.js",
+			"mainDebug": "components/springroll-pbskids/dist/modules/google-analytics.js",
+			"depends": [
+				"easeljs-display",
+				"learning"
+			]
+		},
+		{
+			"id": "kart-kingdom",
+			"name": "Kart Kingdom",
+			"description": "Kart Kingdom API for earning rewards",
+			"main": "components/springroll-pbskids/dist/modules/kart-kingdom.min.js",
+			"mainDebug": "components/springroll-pbskids/dist/modules/kart-kingdom.js",
+			"bower": {
+				"springroll-pbskids": "https://projects.pbs.org/stash/scm/sd/springroll-pbskids.git"
+			}
+		}
+	]
+}
