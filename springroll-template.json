@@ -1,7 +1,7 @@
 {
 	"name": "PBS KIDS Game",
 	"id": "org.pbskids.default",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"extend": "io.springroll.default",
 	"github": "SpringRoll/PBSKIDSTemplate",
 	"required": [
@@ -56,11 +56,7 @@
 			"name": "Google Analytics",
 			"description": "Implement Google Analytic events",
 			"main": "components/springroll-pbskids/dist/modules/google-analytics.min.js",
-			"mainDebug": "components/springroll-pbskids/dist/modules/google-analytics.js",
-			"depends": [
-				"easeljs-display",
-				"learning"
-			]
+			"mainDebug": "components/springroll-pbskids/dist/modules/google-analytics.js"
 		},
 		{
 			"id": "kart-kingdom",
